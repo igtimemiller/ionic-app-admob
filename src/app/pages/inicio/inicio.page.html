@@ -1,0 +1,161 @@
+<ion-content>
+  
+
+  <!-- <ion-list>
+    <ion-item *ngFor="let c of componentes"
+      [routerLink]="c.redirectTo"
+      detail="true"
+    >
+      <ion-label> <ion-icon [name]='c.icon'></ion-icon> {{c.name}}</ion-label>
+    </ion-item>
+  </ion-list> -->
+
+
+  <ion-slides md="ios" pager="true" [options]="slideOpts">
+    <ion-slide>
+      <ion-row>
+        <ion-col size="12">
+
+          <ion-row class="ion-margin-bottom">
+            <ion-col size="12">
+              <img (click)='imagenfuncion()' [src]="imagenfuncion()">
+            </ion-col>
+          </ion-row>
+    
+          <ion-row>
+            <ion-col size="12">
+              <b *ngIf="idioma === 'espanol'">Bienvenido!</b>
+              <b *ngIf="idioma === 'ingles'">Wellcome!</b>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-justify-content-center">
+            <ion-col size="10">
+              <span *ngIf="idioma === 'espanol'" class="descripcion">Con esta aplicación <b>descubrirás tu futuro</b> según tu signo zodiacal. Pasa y descubre lo que te depara en el día de hoy</span>
+              <span *ngIf="idioma === 'ingles'" class="descripcion">With this app <b>you will discover your future</b> according to your zodiac sign. Come and discover what awaits you today</span>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="ion-justify-content-center d-flex">
+              <ion-icon class="text-grey nextpages" name="chevron-forward-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+
+
+        </ion-col>
+      </ion-row>
+
+    </ion-slide>
+    <ion-slide>
+
+      <ion-row>
+        <ion-col size="12">
+
+          <ion-row>
+            <ion-col size="12">
+              <div id="container">
+                <div id="cube">
+                  <div id="faceOne">
+                    <div></div>
+                  </div>
+                  <div id="faceTwo">
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div id="faceThree">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div id="faceFour">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div id="faceFive">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div id="faceSix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+               </div>
+             </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="margin-top-dado">
+            <ion-col size="12">
+              <b *ngIf="idioma === 'espanol'">Descubre</b>
+              <b *ngIf="idioma === 'ingles'">Discover</b>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row class="ion-justify-content-center">
+            <ion-col size="10">
+              <span *ngIf="idioma === 'espanol'" class="descripcion">¿Quieres saber cuál es tu <b>número de la suerte</b> el día de hoy?, ¿tal vez el <span class="random-color">color</span>?</span>
+              <span *ngIf="idioma === 'ingles'" class="descripcion">¿Do you want to know what is your todays <b>lucky number</b>?, ¿maybe the <span class="random-color">color</span>?</span>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row>
+            <ion-col size="12" class="ion-justify-content-center d-flex">
+              <ion-icon class="text-grey nextpages" name="chevron-forward-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+        
+        </ion-col>
+      </ion-row>
+      
+
+    </ion-slide>
+    <ion-slide>
+      
+      <ion-row>
+        <ion-col size="12">
+
+          <ion-row>
+            <ion-col size="12">
+              <h2 *ngIf="idioma === 'espanol'">y dime, como te llamas?</h2>
+              <h2 *ngIf="idioma === 'ingles'">so tell me, what's your name?</h2>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12">
+              <ion-input maxlength="15" (ionChange)='anadirNombre($event)' placeholder="Pepito Grillo"></ion-input>
+            </ion-col>
+          </ion-row>
+          
+        </ion-col>
+      </ion-row>
+      
+      <ion-row *ngIf="nombre" class="position-bottom">
+        <ion-col size="12">
+          <ion-button *ngIf="idioma === 'espanol'" (click)="getNombre()" routerLink="/modal" expand="block" fill="clear" shape="round">
+            <b >Vamos allá</b>
+          </ion-button>
+          <ion-button *ngIf="idioma === 'ingles'" (click)="getNombre()" routerLink="/modalen" expand="block" fill="clear" shape="round">
+            <b >Go ahead</b>
+          </ion-button>
+          <!-- <ion-button class="boton-finalizar" md='ios' routerLink="/modal" expand="block" shape="round">
+            <b>Vamos allá</b>
+          </ion-button> -->
+        </ion-col>
+      </ion-row>
+
+
+      
+    </ion-slide>
+  </ion-slides>
+</ion-content>

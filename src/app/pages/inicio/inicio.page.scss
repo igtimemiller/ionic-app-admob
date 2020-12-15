@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+ion-content{
+    --background: #EBD8C6;
+    
+}
+
+ion-slides{
+    --bullet-background-active: #e0bd9c;
+    height: 100%;
+}
+
+.imagenback{
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+.descripcion{
+    color: gray;
+    font-size: 0.8em;
+}
+
+@keyframes nextpage{
+    0%{
+        transform: translate(0em,1em);
+    }
+    50%{
+        transform: translate(0.5em,1em);
+    }
+    100%{
+        transform: translate(0em,1em);
+    }
+}
+
+.text-grey{
+    color: gray;
+}
+
+.nextpages{
+    animation: 1.2s nextpage linear infinite;
+}
+
+.positionFixed{
+    position: fixed;
+    width:30em;
+    height: 100vh;
+}
+
+
+.d-flex{
+    display: flex;
+}
+
+@keyframes coloranimation{
+    0%{
+        color: #ff6348;
+    }
+    10%{
+        color: #7bed9f;
+    }
+    20%{
+        color:#70a1ff;
+    }
+    30%{
+        color: #2f3542;
+    }
+    40%{
+        color: #ffa502;
+    }
+    50%{
+        color: #ced6e0;
+    }
+    60%{
+        color: #ff6b81;
+    }
+    70%{
+        color: #cd84f1;
+    }
+    80%{
+        color: #fffa65;
+    }
+    90%{
+        color: #ffcccc;
+    }
+    100%{
+        color: #3dc1d3;
+    }
+}
+
+.random-color{
+    animation: 15s coloranimation linear infinite;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+h1 {
+  font-family: "Lato";
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+  /* -- CUBE -- */
+
+#container {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 60px;
+  left: 35%;
+  transform: translate(0%,0);
+  perspective: 1000px;
+}
+
+#container #cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: de 15s infinite linear;
+}
+
+#container #cube>div {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #222;
+}
+
+#container #cube #faceOne { 
+  transform: rotateY(0deg) translateZ(50px); 
+}
+#container #cube #faceTwo { 
+  transform: rotateX(-90deg) translateZ(50px);
+}
+#container #cube #faceThree { 
+  transform: rotateY(90deg) translateZ(50px); 
+}
+#container #cube #faceFour { 
+  transform: rotateY(-90deg) translateZ(50px); 
+}
+#container #cube #faceFive { 
+  transform: rotateX(90deg) translateZ(50px); 
+}
+#container #cube #faceSix { 
+  transform: rotateX(180deg) translateZ(50px); 
+}
+
+  /* -- WHITE DOTS -- */
+
+#container #cube div div {
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#container #cube #faceOne div, 
+#container #cube #faceThree div:nth-of-type(2),
+#container #cube #faceFive div:nth-of-type(2) {
+  top: 43px;
+  left: 43px;
+}
+
+#container #cube #faceTwo div:nth-of-type(1),
+#container #cube #faceThree div:nth-of-type(1),
+#container #cube #faceFour div:nth-of-type(1),
+#container #cube #faceFive div:nth-of-type(1),
+#container #cube #faceSix div:nth-of-type(1) {
+  top: 20px;
+  right: 20px;
+}
+
+#container #cube #faceFour div:nth-of-type(3),
+#container #cube #faceFive div:nth-of-type(3),
+#container #cube #faceSix div:nth-of-type(3) {
+  top: 20px;
+  left: 20px;
+}
+
+#container #cube #faceTwo div:nth-of-type(2),
+#container #cube #faceThree div:nth-of-type(3),
+#container #cube #faceFour div:nth-of-type(2),
+#container #cube #faceFive div:nth-of-type(4),
+#container #cube #faceSix div:nth-of-type(2) {
+  bottom: 20px;
+  left: 20px;
+}
+
+#container #cube #faceFour div:nth-of-type(4),
+#container #cube #faceFive div:nth-of-type(5),
+#container #cube #faceSix div:nth-of-type(4) {
+  bottom: 20px;
+  right: 20px;
+}
+
+#container #cube #faceSix div:nth-of-type(5) {
+  top: 43px;
+  right: 20px;
+}
+
+#container #cube #faceSix div:nth-of-type(6) {
+  top: 43px;
+  left: 20px;
+}
+
+  /* -- ANIMATION -- */
+
+@-webkit-keyframes de {
+  0% {transform: rotateX(0deg) rotateY(0deg);}
+  25% {transform: rotateX(90deg) rotateY(180deg);}
+  50% {transform: rotateX(180deg) rotateY(360deg);}
+  75% {transform: rotateX(270deg) rotateY(540deg);}
+  100% {transform: rotateX(360deg) rotateY(720deg);}
+}
+
+
+.margin-top-dado{
+    margin-top: 8.4em;
+}
+
+.position-bottom{
+    position: absolute;
+    bottom: 10vh;
+}
+
+ion-button{
+    --background: #e0bd9c;
+    --color: white;
+}
+
+.bandera-idioma{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 8%;
+  height: auto;
+  z-index: 999;
+}
